@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/relMain"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/news_img2" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:padding="5dp"
+        android:background="#03a9f4"
+        android:orientation="horizontal"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:tint="#fff"
+            app:srcCompat="@drawable/ic_favorite_border_black_24dp" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tint="#fff"
+            app:srcCompat="@drawable/ic_menu_share" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:background="@drawable/gradient_black"
+        android:padding="5dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignBottom="@+id/imageView">
+
+        <com.joseadilson.news_app.extras.FontTextView
+            android:id="@+id/tv_category_news"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="#ffffff"/>
+
+        <com.joseadilson.news_app.extras.FontTextView
+            android:id="@+id/tv_summary_news"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textStyle="normal"
+            android:textColor="#f9f9f9"/>
+
+        <com.joseadilson.news_app.extras.FontTextView
+            android:id="@+id/tv_time_news"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:textColor="#AAA"/>
+
+    </LinearLayout>
+</RelativeLayout>
