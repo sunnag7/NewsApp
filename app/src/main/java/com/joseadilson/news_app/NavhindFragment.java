@@ -121,9 +121,9 @@ public class NavhindFragment extends Fragment {
                         .userAgent("Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36").get();
 
                 Elements category = html.select("div.post-listing h2.post-box-title a");
-                Elements time     = html.select("div.post-listing p.post-meta span");
+                Elements time     = html.select("div.post-listing p.post-meta span") ;
                 Elements summary  = html.select("div.post-listing div.entry p");
-                Elements times    = html.select("div.post-listing").first().select("p.post-meta span").first().children();
+                //Elements times  = html.select("div.post-listing").first().select("p.post-meta span").first().children();
                 /* ListIterator<Element> bundleList = html.select("div.post-listing p.post-meta")
                     .get(0)
                     .select("span")
@@ -135,10 +135,14 @@ public class NavhindFragment extends Fragment {
                 for (Element element:category){
                     News news = new News();
                     news.setCategoryNews(element.text());
-                    news.setTimeNews(times.text());
+                    if (i==0)
+                        news.setTimeNews(time.get(i).text());
+                    else
+                        news.setTimeNews(time.get(i+4).text());
+
                     news.setSummaryNews(summary.get(i).text());
                     news.setUrlNews(element.attr("href"));
-                    news.setImgUrlNews( "http://www.navhindtimes.in/wp-content/uploads/2014/07/Logo_New.jpg");
+                    news.setImgUrlNews("http://www.navhindtimes.in/wp-content/uploads/2014/07/Logo_New.jpg");
                     newses.add(news);
                     i++;
                 }
